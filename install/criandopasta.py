@@ -4,9 +4,6 @@ import io
 import os
 from base64 import urlsafe_b64decode as base64urldecode
 
-# Variável global para armazenar o DDIDDDTELEFONE
-DDIDDDTELEFONE = ""
-
 def verificar_arquivo_existe(dados_path, telefone):
     arquivo_telefone = os.path.join(dados_path, f'meutelefone.txt')
     if os.path.exists(arquivo_telefone):
@@ -36,8 +33,7 @@ def main():
     ddd = input('Digite o DDD (código da região): ')
     telefone = input('Digite o número de telefone (sem DDI e DDD): ')
     telefone_completo = f'{ddi}{ddd}{telefone}'
-    
-    # Salvar o valor na variável global
+    # Variável global para armazenar o DDIDDDTELEFONE
     DDIDDDTELEFONE = telefone_completo
 
     dados_path = criar_pasta_telefone(telefone_completo)
