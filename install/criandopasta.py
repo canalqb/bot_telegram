@@ -41,7 +41,10 @@ def main():
     if not verificar_arquivo_existe(dados_path, telefone_completo):
         id_telegram = input('Digite o ID do Telegram: ')
         hash_telegram = input('Digite o HASH do Telegram: ')
-
+        id_telegram = locals().get('id_telegram')
+        hash_telegram = locals().get('hash_telegram')
+        DDIDDDTELEFONE = locals().get('DDIDDDTELEFONE')
+        
         salvar_dados_telefone(dados_path, telefone_completo, id_telegram, hash_telegram)
         print('Dados salvos com sucesso!')
     else:
