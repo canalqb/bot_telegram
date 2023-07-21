@@ -1,8 +1,8 @@
 import telethon
 from qrcode import QRCode
+#______Descobrindo o sistema operacional______
 import platform
 sistema_operacional = platform.system()
-
 if sistema_operacional == "Windows":
     idsystem = 'w'
 elif sistema_operacional == "Linux":
@@ -14,26 +14,19 @@ else:
     idsystem = 'o'
 #idsystem Pode retornar w para Windows), (a para Android), (l para Linux), )o para outros sistemas)
 
-def display_url_as_qr(url):
-    qr = QRCode()
-    qr.add_data(url)
-    qr.print_ascii()
+#______Resgatando Variaveis ______
+api_id = id_telegram  # Substitua pelo seu API ID
+api_hash = hash_telegram  # Substitua pelo seu API Hash
+telefone = str(DDIDDDTELEFONE)
+session_file = os.path.join(idsystem + telefone)
 
-async def main():
-    api_id = int(id_telegram)  # Substitua pelo seu API ID
-    api_hash = str(hash_telegram)  # Substitua pelo seu API Hash
-    telefone = str(DDIDDDTELEFONE)
-    session_file = os.path.join(idsystem + telefone)
-    
-    async with telethon.TelegramClient(session_file, api_id, api_hash, device_model= 'bot', timeout=2, connection_retries=1, auto_reconnect=True) as client:
-        qr_login = await client.qr_login()
-        display_url_as_qr(qr_login.url)
+nomedevice = idsystem + telefone
+client = TelegramClient(session_file, int(api_id), str(api_hash), device_model= 'bot', timeout=2, connection_retries=1, auto_reconnect=True)
+client.loop.run_until_complete(main(client))
+client.disconnect()
 
-        try:
-            await qr_login.wait()
-        except telethon.errors.TimeoutError:
-            print("Tempo limite excedido. Tente novamente.")
+# Obtendo o nome da sessão
+#session_name = os.path.splitext(session_file)[0]
 
-if __name__ == "__main__":
-    main_loop = telethon.events.asyncio_loop.AsyncioLoop()
-    main_loop.run_until_complete(main())
+client = locals().get('client')
+print("Arquivo de saída gerado com sucesso!")
