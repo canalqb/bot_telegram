@@ -1,7 +1,6 @@
 import telethon
 from qrcode import QRCode
 import platform
-
 sistema_operacional = platform.system()
 
 if sistema_operacional == "Windows":
@@ -14,16 +13,16 @@ elif sistema_operacional == "Linux":
 else:
     idsystem = 'o'
 #idsystem Pode retornar w para Windows), (a para Android), (l para Linux), )o para outros sistemas)
-print(idsystem)
-exit()
+
 def display_url_as_qr(url):
     qr = QRCode()
     qr.add_data(url)
     qr.print_ascii()
 
 async def main():
-    api_id = 123456  # Substitua pelo seu API ID
-    api_hash = "sua_api_hash"  # Substitua pelo seu API Hash
+    api_id = int(id_telegram)  # Substitua pelo seu API ID
+    api_hash = str("hash_telegram")  # Substitua pelo seu API Hash
+    telefone = str(DDIDDDTELEFONE)
 
     async with telethon.TelegramClient('session', api_id, api_hash) as client:
         qr_login = await client.qr_login()
