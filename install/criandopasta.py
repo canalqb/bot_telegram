@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import requests
 import io 
+import os
 from base64 import urlsafe_b64decode as base64urldecode
 
 # Variável global para armazenar o DDIDDDTELEFONE
