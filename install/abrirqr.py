@@ -1,7 +1,7 @@
 import telethon
 from qrcode import QRCode
 import platform
-print("rodrigo")
+
 sistema_operacional = platform.system()
 if sistema_operacional == "Windows":
     idsystem = 'w'
