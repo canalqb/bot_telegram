@@ -13,12 +13,29 @@ elif sistema_operacional == "Linux":
         idsystem = 'l'
 else:
     idsystem = 'o'
+    
 #idsystem Pode retornar w para Windows), (a para Android), (l para Linux), )o para outros sistemas)
 print('ddd',DDIDDDTELEFONE)
-print('telefone', telefone)
 
 diretorio_atual = os.getcwd()
-diretorio_pai = os.path.dirname(diretorio_atual)
+caminho_arquivo = os.path.join(diretorio_atual, DDIDDDTELEFONE, "dados", "meutelefone.txt")
 
-print("O diretorio_atual é:", diretorio_atual)
-print("O diretório do nível anterior é:", diretorio_pai)
+# Inicializar as variáveis para armazenar os valores
+tel = None
+id_ = None
+hash_ = None
+
+# Ler o arquivo e extrair as variáveis
+with open(caminho_arquivo, 'r') as arquivo:
+    for linha in arquivo:
+        if linha.startswith("TEL"):
+            tel = linha.split()[1]
+        elif linha.startswith("ID"):
+            id_ = linha.split()[1]
+        elif linha.startswith("HASH"):
+            hash_ = linha.split()[1]
+
+# Imprimir as variáveis extraídas
+print("TEL:", tel)
+print("ID:", id_)
+print("HASH:", hash_)
