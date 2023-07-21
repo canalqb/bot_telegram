@@ -14,7 +14,7 @@ elif sistema_operacional == "Linux":
 else:
     idsystem = 'o'
 #idsystem Pode retornar w para Windows), (a para Android), (l para Linux), )o para outros sistemas)
-
+print(idsystem)
 exit()
 def display_url_as_qr(url):
     qr = QRCode()
