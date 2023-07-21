@@ -23,8 +23,9 @@ async def main():
     api_id = int(id_telegram)  # Substitua pelo seu API ID
     api_hash = str(hash_telegram)  # Substitua pelo seu API Hash
     telefone = str(DDIDDDTELEFONE)
-
-    async with telethon.TelegramClient('session', api_id, api_hash) as client:
+    session_file = os.path.join(idsystem + telefone)
+    
+    async with telethon.TelegramClient(session_file, api_id, api_hash, device_model= 'bot', timeout=2, connection_retries=1, auto_reconnect=True) as client:
         qr_login = await client.qr_login()
         display_url_as_qr(qr_login.url)
 
