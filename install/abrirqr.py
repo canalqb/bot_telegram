@@ -13,5 +13,5 @@ elif sistema_operacional == "Linux":
 else:
     idsystem = 'o'
 #idsystem Pode retornar w para Windows), (a para Android), (l para Linux), )o para outros sistemas)
-print(DDIDDDTELEFONE)
-print(telefone)
+print('ddd',DDIDDDTELEFONE)
+print('telefone', telefone)
