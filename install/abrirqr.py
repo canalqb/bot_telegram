@@ -1,7 +1,7 @@
 import telethon
 from qrcode import QRCode
-#______Descobrindo o sistema operacional______
 import platform
+print("rodrigo")
 sistema_operacional = platform.system()
 if sistema_operacional == "Windows":
     idsystem = 'w'
@@ -14,6 +14,7 @@ else:
     idsystem = 'o'
 #idsystem Pode retornar w para Windows), (a para Android), (l para Linux), )o para outros sistemas)
 
+print(id_telegram)
 #______Resgatando Variaveis ______
 api_id = id_telegram  # Substitua pelo seu API ID
 api_hash = hash_telegram  # Substitua pelo seu API Hash
