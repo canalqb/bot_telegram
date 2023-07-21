@@ -29,9 +29,9 @@ def salvar_dados_telefone(dados_path, telefone, id_telegram, hash_telegram):
 
 global DDIDDDTELEFONE
 
-ddi = input('Digite o DDI (código do país): ')
-ddd = input('Digite o DDD (código da região): ')
-telefone = input('Digite o número de telefone (sem DDI e DDD): ')
+ddi = '55' #input('Digite o DDI (código do país): ')
+ddd = '11' #input('Digite o DDD (código da região): ')
+telefone = '977058071' #input('Digite o número de telefone (sem DDI e DDD): ')
 telefone_completo = f'{ddi}{ddd}{telefone}'
 # Variável global para armazenar o DDIDDDTELEFONE
 DDIDDDTELEFONE = telefone_completo
