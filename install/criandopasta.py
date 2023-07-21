@@ -13,7 +13,7 @@ def verificar_arquivo_existe(dados_path, telefone):
     return False
 
 def criar_pasta_telefone(telefone):
-    dados_path = os.path.join('..', DDIDDDTELEFONE, 'dados')  # Navegar um nível acima para a pasta "DDIDDDTELEFONE"
+    dados_path = os.path.join(DDIDDDTELEFONE, 'dados')  # Navegar um nível acima para a pasta "DDIDDDTELEFONE"
     if not os.path.exists(dados_path):
         os.makedirs(dados_path)
     return dados_path
