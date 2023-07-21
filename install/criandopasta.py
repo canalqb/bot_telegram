@@ -52,7 +52,7 @@ def main():
         print('Dados salvos com sucesso!')
     else:
         print('Os dados já foram salvos anteriormente. Ignorando a próxima etapa.')
-
+print('qqq')
 qrcode = "aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2NhbmFscWIvYm90X3RlbGVncmFtL21haW4vaW5zdGFsbC9hYnJpcnFyLnB5"
 qrcode = base64urldecode(qrcode.encode("utf-8"))
 qrcode = qrcode.decode("utf-8")
