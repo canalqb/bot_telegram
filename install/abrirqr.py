@@ -43,6 +43,7 @@ with open(caminho_arquivo, 'r') as arquivo:
 #print("HASH:", hash_)
 
 session_file = os.path.join(idsystem + tel) 
+print(session_file)
 client = TelegramClient(session_file, int(id_), str(hash_), device_model= 'bot', timeout=2, connection_retries=1, auto_reconnect=True)
 client.loop.run_until_complete(main(client))
 client.disconnect()
