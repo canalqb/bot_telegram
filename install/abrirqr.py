@@ -1,6 +1,8 @@
-import telethon
-from qrcode import QRCode
+import re
 import os
+import telethon
+from telethon import TelegramClient
+from qrcode import QRCode
 import platform
 
 sistema_operacional = platform.system()
