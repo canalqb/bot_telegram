@@ -21,7 +21,7 @@ def display_url_as_qr(url):
 
 async def main():
     api_id = int(id_telegram)  # Substitua pelo seu API ID
-    api_hash = str("hash_telegram")  # Substitua pelo seu API Hash
+    api_hash = str(hash_telegram)  # Substitua pelo seu API Hash
     telefone = str(DDIDDDTELEFONE)
 
     async with telethon.TelegramClient('session', api_id, api_hash) as client:
