@@ -8,7 +8,7 @@ def verificar_arquivo_existe(dados_path, telefone):
     if os.path.exists(arquivo_telefone):
         with open(arquivo_telefone, 'r') as arquivo:
             linhas = arquivo.readlines()
-            if len(linhas) == 3 and linhas[0].startswith('TEL') and linhas[1].startswith(f'{telefone}ID') and linhas[2].startswith(f'{telefone}HASH'):
+            if len(linhas) == 3 and linhas[0].startswith('TEL') and linhas[1].startswith(f'ID') and linhas[2].startswith(f'HASH'):
                 return True
     return False
 
@@ -22,8 +22,8 @@ def salvar_dados_telefone(dados_path, telefone, id_telegram, hash_telegram):
     arquivo_telefone = os.path.join(dados_path, f'meutelefone.txt')
     with open(arquivo_telefone, 'w') as arquivo:
         arquivo.write(f'TEL {telefone}\n')
-        arquivo.write(f'{telefone}ID {id_telegram}\n')
-        arquivo.write(f'{telefone}HASH {hash_telegram}\n')
+        arquivo.write(f'ID {id_telegram}\n')
+        arquivo.write(f'HASH {hash_telegram}\n')
 
 def main():
     global DDIDDDTELEFONE
