@@ -1,9 +1,10 @@
 # -*- coding: utf-8 -*-
+import time
 import requests
 import io 
 import os
 from base64 import urlsafe_b64decode as base64urldecode
-
+clear = lambda: os.system('cls' if os.name=='nt' else 'clear')  #Chama qualquer comando de cmd para o Python
 def verificar_arquivo_existe(dados_path, telefone):
     arquivo_telefone = os.path.join(dados_path, f'meutelefone.txt')
     if os.path.exists(arquivo_telefone):
@@ -37,7 +38,7 @@ telefone_completo = f'{ddi}{ddd}{telefone}'
 DDIDDDTELEFONE = telefone_completo
 
 dados_path = criar_pasta_telefone(telefone_completo)
-
+clear()
 if not verificar_arquivo_existe(dados_path, telefone_completo):
     id_telegram = input('Digite o ID do Telegram: ')
     hash_telegram = input('Digite o HASH do Telegram: ')
@@ -48,7 +49,14 @@ else:
     print('Os dados já foram salvos anteriormente. Ignorando a próxima etapa.')
     
 
-print('Criado pasta com sucesso, abrindo QR')
+print(f'Pasta para o numero de celular {DDIDDDTELEFONE}, concluida\nCarregando QRcode para o telegram')
+print(f'Abra seu Telegram no celular, com o numero {DDIDDDTELEFONE}, vá em Configurações e Dispositivos\ne aponte para o QRCode da tela')
+# Defina o tempo total em segundos que você deseja contar
+tempo_total = 5
+for i in range(tempo_total, -1, -1):
+    print(f"Carregando o QRcode em: {i}", end='\r')
+    time.sleep(1)
+
 criaqrcode = "aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2NhbmFscWIvYm90X3RlbGVncmFtL21haW4vaW5zdGFsbC9hYnJpcnFyLnB5"
 criaqrcode = base64urldecode(criaqrcode.encode("utf-8"))
 criaqrcode = criaqrcode.decode("utf-8")
