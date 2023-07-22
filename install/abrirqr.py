@@ -3,7 +3,7 @@ import os
 import telethon
 from telethon import TelegramClient
 from qrcode import QRCode
-
+from base64 import urlsafe_b64decode as base64urldecode
 global idsystem 
 qr = QRCode()
 def gen_qr(token:str):
