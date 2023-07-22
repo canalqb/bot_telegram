@@ -1,4 +1,27 @@
 # -*- coding: utf-8 -*-
+import os
+import subprocess
+# Lista dos módulos que não são padrões do Python
+modulos_nao_padrao = [    'requests',    'telethon',    'qrcode']
+while True:
+    try:
+        # Verifica se os módulos não padrão estão instalados
+        modulos_faltantes = [modulo for modulo in modulos_nao_padrao if not os.system(f'python -c "import {modulo}"') == 0]
+        
+        if len(modulos_faltantes) == 0:
+            print("Todos os módulos não padrão estão instalados.")
+            break
+        else:
+            # Instala os módulos que estão faltando
+            for modulo in modulos_faltantes:
+                print(f"Instalando o módulo: {modulo}")
+                subprocess.run(['pip', 'install', modulo])
+                
+    except Exception as e:
+        print(f"Ocorreu um erro durante a instalação do módulo: {modulo}")
+        print(f"Erro: {str(e)}")
+        exit()
+
 import time
 import requests
 import io 
