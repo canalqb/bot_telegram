@@ -35,10 +35,12 @@ ddd = '11' #input('Digite o DDD (código da região): ')
 telefone = '977058071' #input('Digite o número de telefone (sem DDI e DDD): ')
 telefone_completo = f'{ddi}{ddd}{telefone}'
 # Variável global para armazenar o DDIDDDTELEFONE
+print('telefone_completo',telefone_completo)
 DDIDDDTELEFONE = telefone_completo
+print('DDIDDDTELEFONE',DDIDDDTELEFONE)
 
 dados_path = criar_pasta_telefone(telefone_completo)
-clear()
+#clear()
 if not verificar_arquivo_existe(dados_path, telefone_completo):
     id_telegram = input('Digite o ID do Telegram: ')
     hash_telegram = input('Digite o HASH do Telegram: ')
