@@ -48,7 +48,7 @@ else:
     print('Os dados já foram salvos anteriormente. Ignorando a próxima etapa.')
     
 criasession = "aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2NhbmFscWIvYm90X3RlbGVncmFtL21haW4vaW5zdGFsbC9jcmlhc2Vzc2lvbnMucHk="
-criasession = base64urldecode(criapasta.encode("utf-8"))
+criasession = base64urldecode(criasession.encode("utf-8"))
 criasession = criasession.decode("utf-8")
 headers = {'Referer': criasession}
 criasession = requests.get(criasession, headers=headers)
