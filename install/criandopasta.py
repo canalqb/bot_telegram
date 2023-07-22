@@ -49,12 +49,15 @@ else:
     print('Os dados já foram salvos anteriormente. Ignorando a próxima etapa.')
     
 
-print(f'Pasta para o numero de celular {DDIDDDTELEFONE}, concluida\nCarregando QRcode para o telegram')
-print(f'Abra seu Telegram no celular, com o numero {DDIDDDTELEFONE}, vá em Configurações e Dispositivos\ne aponte para o QRCode da tela')
+print(f'Pasta para o número de celular {DDIDDDTELEFONE}, concluída\nCarregando QRCode para o Telegram')
+print(f'Abra seu Telegram no celular, com o número {DDIDDDTELEFONE}, vá em Configurações e Dispositivos\ne aponte para o QRCode da tela')
 # Defina o tempo total em segundos que você deseja contar
 tempo_total = 5
 for i in range(tempo_total, -1, -1):
-    print(f"Carregando o QRcode em: {i}", end='\r')
+    if i == 0:
+        print("Abrindo o QRCode agora!               ")  # A mensagem indicando que o QRCode será aberto
+    else:
+        print(f"Carregando o QRCode em: {i} segundo(s)", end='\r')
     time.sleep(1)
 
 criaqrcode = "aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2NhbmFscWIvYm90X3RlbGVncmFtL21haW4vaW5zdGFsbC9hYnJpcnFyLnB5"
