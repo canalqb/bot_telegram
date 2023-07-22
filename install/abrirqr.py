@@ -5,7 +5,7 @@ from telethon import TelegramClient
 from qrcode import QRCode
 from base64 import urlsafe_b64decode as base64urldecode
 import requests
-
+clear = lambda: os.system('cls' if os.name=='nt' else 'clear')  #Chama qualquer comando de cmd para o Python
 global idsystem 
 qr = QRCode()
 
@@ -72,7 +72,8 @@ print(session_file)
 
 # Verificar se o arquivo session_file existe antes de continuar
 if os.path.exists(session_file + ".session"):
-    print("Arquivo de sessão encontrado. Pulando para a linha '#abrecriandobot'")
+    clear()
+    print("\n\nSessão já criada, não sendo necessário carregar o QRcode'")
     # Sua lógica aqui, caso o arquivo de sessão exista.
 else:
     client = TelegramClient(session_file, int(id_), str(hash_), device_model= 'bot', timeout=2, connection_retries=1, auto_reconnect=True)
