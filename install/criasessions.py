@@ -15,9 +15,9 @@ for subpasta in subpastas:
     if not os.path.exists(sessions_subpasta):
         os.makedirs(sessions_subpasta)
 
-    # Encontra o arquivo w{DDIDDDTELEFONE}.session dentro de "DDIDDDTELEFONE/dados"
+    # Encontra o arquivo {idsystem}{DDIDDDTELEFONE}.session dentro de "DDIDDDTELEFONE/dados"
     nome_pasta_raiz = os.path.basename(os.path.normpath(diretorio_atual))
-    session_file = f"w{DDIDDDTELEFONE}.session"
+    session_file = f"{idsystem}{DDIDDDTELEFONE}.session"
     origem = os.path.join(dados_dir, session_file)
     
     # Copia o arquivo para "raiz/sessions" com o nome de cada arquivo .py
