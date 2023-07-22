@@ -1,39 +1,4 @@
 # -*- coding: utf-8 -*-
-import subprocess
-
-# Lista dos módulos que precisam ser verificados e instalados (se necessário)
-modulos_necessarios = ['os', 'shutil', 'time', 'requests', 'io', 'base64', 're', 'telethon', 'qrcode']
-
-while True:
-    modulos_instalados = []  # Lista para rastrear os módulos instalados com sucesso
-
-    # Verificar a existência de cada módulo
-    for modulo in modulos_necessarios:
-        try:
-            # Tentar importar o módulo
-            __import__(modulo)
-            modulos_instalados.append(modulo)
-        except ImportError:
-            # Caso o módulo não esteja instalado
-            print(f"O módulo '{modulo}' não está instalado.")
-            try:
-                # Tentar instalar o módulo usando o pip
-                subprocess.check_call(['pip', 'install', modulo])
-                modulos_instalados.append(modulo)
-            except subprocess.CalledProcessError:
-                print(f"Não foi possível instalar o módulo '{modulo}'.")
-                break
-
-    # Verificar se todos os módulos necessários foram instalados
-    if len(modulos_instalados) == len(modulos_necessarios):
-        print("Todos os módulos necessários foram instalados.")
-        break
-
-    # Aguardar um pouco antes de tentar novamente (opcional)
-    input("Pressione Enter para tentar novamente...")
-
-print("Continuação do seu script após a instalação dos módulos.")
-
 import time
 import requests
 import io 
