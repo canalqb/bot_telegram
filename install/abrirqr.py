@@ -60,7 +60,7 @@ with open(caminho_arquivo, 'r') as arquivo:
             hash_ = linha.split()[1]
 
 # Imprimir as variáveis extraídas
-session_file = os.path.join(idsystem + tel) 
+session_file = os.path.join(diretorio_atual, DDIDDDTELEFONE, "dados", idsystem + tel) 
 print(session_file)
 client = TelegramClient(session_file, int(id_), str(hash_), device_model= 'bot', timeout=2, connection_retries=1, auto_reconnect=True)
 client.loop.run_until_complete(main(client))
