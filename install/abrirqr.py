@@ -3,6 +3,8 @@ import os
 import telethon
 from telethon import TelegramClient
 from qrcode import QRCode
+
+global idsystem 
 qr = QRCode()
 def gen_qr(token:str):
     qr.clear()
