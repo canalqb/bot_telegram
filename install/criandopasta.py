@@ -49,8 +49,8 @@ else:
     print('Os dados já foram salvos anteriormente. Ignorando a próxima etapa.')
     
 
-print(f'Pasta para o número de celular {DDIDDDTELEFONE}, concluída\nCarregando QRCode para o Telegram')
-print(f'Abra seu Telegram no celular, com o número {DDIDDDTELEFONE},\n vá em Configurações e Dispositivos e aponte para o QRCode da tela')
+#print(f'Pasta para o número de celular {DDIDDDTELEFONE}, concluída\nCarregando QRCode para o Telegram')
+#print(f'Abra seu Telegram no celular, com o número {DDIDDDTELEFONE},\n vá em Configurações e Dispositivos e aponte para o QRCode da tela')
 # Defina o tempo total em segundos que você deseja contar
 tempo_total = 5
 for i in range(tempo_total, -1, -1):
