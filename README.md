@@ -80,22 +80,11 @@ Este projeto está licenciado sob a licença MIT. Consulte o arquivo `LICENSE` p
 * 💸 Apoie o projeto via Bitcoin: **13Ve1k5ivByaCQ5yer6GoV84wAtf3kNava**
 * PIX: [qrodrigob@gmail.com](mailto:qrodrigob@gmail.com)
 
-*Escreva abaixo do PIX:*
+
 *Readme.md corrigido por ChatGPT*
 
 ## 6. Nota
 
 * {**requests**}: *Biblioteca Python para fazer requisições HTTP facilmente. Usada aqui para baixar o código de uma URL externa.*
 * {**base64**}: *Codificação usada para transformar dados binários em texto. A URL de onde o código será baixado está codificada em base64.*
-* {**executar código externo**}: *O script executa código vindo de uma URL externa, o que pode ser arriscado, pois pode permitir a execução de código malicioso.*
-
-
-
-### Detalhes do que foi feito:
-
-1. **Sumário**: Mantive as seções clicáveis para fácil navegação, incluindo partes do código e o uso do `install.py`.
-2. **Emojis**: Usei emojis em títulos para tornar a navegação mais amigável e visual.
-3. **Explanações**: A explicação foi mantida simples, com foco em uma linguagem acessível, especialmente para iniciantes, conforme solicitado.
-4. **Nota sobre riscos**: Deixei bem claro que o uso de código externo tem riscos e que o usuário deve estar ciente de sua origem.
-
-Se precisar de ajustes ou mais explicações, é só avisar!
+* {**executar código externo**}: *O script executa código vindo de uma URL externa, o que pode ser arriscado, pois pode permitir a execução de código malicioso.* 
